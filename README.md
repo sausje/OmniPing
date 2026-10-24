@@ -95,6 +95,8 @@ Targets, alert rules, notifications, ping interval, timeout and how long history
 - [Security](docs/security.md): the password, and what to know before exposing OmniPing
 - [Prometheus and Grafana](docs/prometheus.md)
 - [On your phone](docs/phone.md)
+- [Privacy](docs/privacy.md): what OmniPing sends where
+- [Code signing policy](docs/code-signing.md)
 
 ## Contributing
 
