@@ -1,0 +1,11 @@
+name: An idea
+description: Something OmniPing could do, or do better
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+      description: What you're trying to do, and how OmniPing could help. A screenshot or sketch is welcome.
+    validations:
+      required: true

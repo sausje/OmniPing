@@ -1,0 +1,11 @@
+# Settings for the OmniPing service. Everything else is set in the page.
+# After a change: sudo systemctl restart omniping
+
+# Port of the web page.
+OMNIPING_PORT=8080
+
+# A password for the page and the API. It wins over the one set in the page.
+#OMNIPING_PASSWORD=
+
+# Allow the "Run a script" alert channel.
+#OMNIPING_ALLOW_SCRIPTS=true

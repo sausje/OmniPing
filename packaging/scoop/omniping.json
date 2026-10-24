@@ -1,0 +1,38 @@
+{
+    "version": "1.0.0",
+    "description": "Live ping graphs for your whole network, as a tray app.",
+    "homepage": "https://omniping.org",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/sausje/OmniPing/releases/download/v1.0.0/OmniPing-1.0.0-windows-amd64-portable.zip",
+            "hash": ""
+        },
+        "arm64": {
+            "url": "https://github.com/sausje/OmniPing/releases/download/v1.0.0/OmniPing-1.0.0-windows-arm64-portable.zip",
+            "hash": ""
+        }
+    },
+    "bin": "OmniPing.exe",
+    "shortcuts": [
+        [
+            "OmniPing.exe",
+            "OmniPing"
+        ]
+    ],
+    "persist": "data",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/sausje/OmniPing/releases/download/v$version/OmniPing-$version-windows-amd64-portable.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/sausje/OmniPing/releases/download/v$version/OmniPing-$version-windows-arm64-portable.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
+    }
+}

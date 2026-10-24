@@ -1,0 +1,33 @@
+# OmniPing. In Portainer: Stacks → Add stack → Web editor, paste this file,
+# then Deploy the stack. Elsewhere: docker compose up -d next to this file.
+# Then open http://<server-address>:8080
+
+services:
+  omniping:
+    image: ghcr.io/sausje/omniping:latest
+    container_name: omniping
+    restart: unless-stopped
+    # Pings and network scans see your network directly, and IPv6 works
+    # without extra setup. For a normal bridge network, remove this line and
+    # add:  ports: ["8080:8080"]
+    network_mode: host
+    cap_add:
+      - NET_RAW                  # permission to send pings
+    environment:
+      TZ: Europe/London          # your time zone, for alert messages and logs
+      OMNIPING_PORT: 8080        # port of the web page
+      PUID: 1000                 # user and group OmniPing runs as; they own the files in /data
+      PGID: 1000
+      # OMNIPING_ALLOW_SCRIPTS: "true"   # allow the "Run a script" alert channel
+    volumes:
+      # Settings and history. To keep them in a folder you can see, use a
+      # full path instead, like /opt/omniping:/data
+      - omniping-data:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+volumes:
+  omniping-data:

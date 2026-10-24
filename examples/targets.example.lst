@@ -1,0 +1,11 @@
+# Example target list for OmniPing.
+# Import: Add & scan → List or file → Load from file…, or paste these lines.
+# Each line: an address or name, then an optional alias. With commas you can
+# add a group too: address, alias, group
+# MultiPing .lst and .mpl files can be loaded directly.
+192.168.1.1, Router, Home
+192.168.1.10, NAS, Home
+1.1.1.1, Cloudflare DNS, Internet
+8.8.8.8, Google DNS, Internet
+9.9.9.9, Quad9 DNS, Internet
+example.com, Example website, Internet

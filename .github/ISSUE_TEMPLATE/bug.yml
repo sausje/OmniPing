@@ -1,0 +1,39 @@
+name: Something doesn't work
+description: A bug, a crash, or a page that looks wrong
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead. Leave out your own addresses, tokens and webhook URLs.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Settings → About, or the image tag.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: how
+    attributes:
+      label: How do you run it?
+      options:
+        - Docker on a Raspberry Pi
+        - Docker on another computer or NAS
+        - Windows app (installer)
+        - Windows app (portable)
+        - Linux package (.deb or .rpm)
+        - Linux program, started by hand
+        - macOS program
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: Anything relevant from the log (docker logs, journalctl -u omniping, or omniping.log in the Windows app's folder).
+      render: text

@@ -1,0 +1,48 @@
+# The .deb and .rpm packages, made with nfpm (https://nfpm.goreleaser.com).
+# The release workflow sets ARCH (amd64, arm64 or arm7) and VERSION, and
+# puts the Linux program to pack in build/omniping.
+name: omniping
+arch: ${ARCH}
+platform: linux
+version: ${VERSION}
+section: net
+priority: optional
+maintainer: sausje <9370253+sausje@users.noreply.github.com>
+description: |
+  Live ping graphs, history and alerts for your network.
+  OmniPing pings your router, DNS servers and websites side by side, keeps
+  every result on disk, and alerts you when they stop answering. It runs as
+  a service and shows its page on port 8080.
+vendor: OmniPing
+homepage: https://omniping.org
+license: MIT
+
+contents:
+  - src: build/omniping
+    dst: /usr/bin/omniping
+    file_info:
+      mode: 0755
+  - src: packaging/linux/omniping.service
+    dst: /usr/lib/systemd/system/omniping.service
+    file_info:
+      mode: 0644
+  - src: packaging/linux/omniping.default
+    dst: /etc/default/omniping
+    type: config|noreplace
+    file_info:
+      mode: 0644
+  - src: LICENSE
+    dst: /usr/share/doc/omniping/copyright
+    packager: deb
+    file_info:
+      mode: 0644
+  - src: LICENSE
+    dst: /usr/share/licenses/omniping/LICENSE
+    packager: rpm
+    file_info:
+      mode: 0644
+
+scripts:
+  postinstall: packaging/linux/postinstall.sh
+  preremove: packaging/linux/preremove.sh
+  postremove: packaging/linux/postremove.sh

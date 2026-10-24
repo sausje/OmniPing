@@ -1,0 +1,19 @@
+# Built programs
+/dist/
+*.exe
+/omniping
+
+# Data written when running OmniPing from this folder
+/data/
+
+# Local things that are not part of OmniPing
+/.tools/
+/.claude/
+/local/
+/design/
+/website/
+/mockup.pdf
+/*.syso
+
+# Linux packages are built from here (packaging/linux/nfpm.yaml).
+/build/
