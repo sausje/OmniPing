@@ -5,7 +5,7 @@ On Windows, OmniPing runs in the background with its icon next to the clock. Eac
 - `OmniPing-<version>-windows-setup.exe` installs it for you only, without administrator rights, and adds it to the Start menu.
 - `OmniPing-<version>-windows-amd64-portable.zip` runs from any folder or a USB stick. Unzip it and start `OmniPing.exe`. Use the `arm64` zip on an ARM PC.
 
-OmniPing isn't code-signed yet, so Windows may say it protected your PC. Click **More info**, then **Run anyway**.
+OmniPing isn't code-signed yet (see the [code signing policy](code-signing.md)), so Windows may say it protected your PC. Click **More info**, then **Run anyway**.
 
 ## Using it
 

@@ -13,3 +13,7 @@ Using it:
 - [Security](security.md): the password, and reaching OmniPing from outside
 - [Prometheus and Grafana](prometheus.md)
 - [On your phone](phone.md)
+
+About the project:
+- [Privacy](privacy.md): what OmniPing sends where
+- [Code signing policy](code-signing.md): how the Windows programs are signed
